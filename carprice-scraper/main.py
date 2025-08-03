@@ -18,8 +18,8 @@ async def scraper():
     print("Scraper ativado! Loading...")
     payloads = await capturar_payload(rentcars_url)
 
-    # Aqui você pode enviar para o RabbitMQ ou salvar em arquivo
     print(f"Total payloads capturados: {len(payloads)}")
+
     carros = []
     for batch in payloads:
         carros.extend(parse_batch(batch))
@@ -28,7 +28,6 @@ async def scraper():
     for carro in carros:
         print(carro)
 
-    #return payloads
 
 if __name__ == "__main__":
     asyncio.run(scraper())
