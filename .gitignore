@@ -1,38 +1,6 @@
-# Ignorar ambientes virtuais em qualquer subpasta
-**/venv/
-
-# Arquivos compilados Python
+venv/
+*.pyc
 __pycache__/
-*.py[cod]
-*$py.class
-
-# Arquivos de configuração JetBrains IDEs
 .idea/
-
-# Arquivos temporários do sistema
-.DS_Store
-Thumbs.db
-
-# Logs e arquivos temporários
-*.log
-*.tmp
-
-# Arquivos de cache do pip
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Arquivos de configuração do pytest
-.cache/
-
-# Configurações locais do VSCode (se usar)
 .vscode/
-
-# Arquivos de banco de dados SQLite
-*.sqlite3
-
-# Arquivos gerados pelo Jupyter Notebook
-.ipynb_checkpoints/
-
-# Arquivos específicos do macOS
-.AppleDouble
-.LSOverride
+.DS_Store
