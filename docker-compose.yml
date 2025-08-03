@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  carprice-scraper:
+    build: ./carprice-scraper
+    volumes:
+      - /Users/klyltongomesdesouza/Documents/carprice-project/carprice-scraper:/app
+    working_dir: /app
+    command: python main.py
