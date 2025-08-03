@@ -1,24 +1,40 @@
-import asyncio
+import yaml
+from fastapi import FastAPI, HTTPException
+from pathlib import Path
+
+from models import CarPrice
+from swagger_config import swagger_config
 from playwright_handler import capturar_payload
 from parser import parse_batch
 
-#URL = "https://m.rentcars.com/pt-br/reserva/listar/9-1754226000-9-1754312400-0-0-0-0-0-0-0-0"
-URL = "https://www.rentcars.com/pt-br/reserva/listar/54-1754312400-54-1754398800-0-0-0-0-0-0-0-0?"
-async def main():
-    print("Iniciando scraping...")
-    payloads = await capturar_payload(URL)
+# Configurações
+CONFIG_PATH = Path(__file__).parent.parent / "carprice-scraper.yaml"
+config = yaml.safe_load(CONFIG_PATH.read_text())
+
+rentcars_url = config["rentcars"]["url"]
+browser_type = config["rentcars"]["browser"]
+print(f"Scraping URL: {rentcars_url} usando {browser_type}")
+
+# FastAPI app
+app = FastAPI(
+    title=swagger_config["title"],
+    description=swagger_config["description"],
+    version=swagger_config["version"]
+)
+
+@app.get(
+    "/scraper",
+    summary="Dispara o scraper e retorna os dados",
+    response_model=list[CarPrice]
+)
+async def scraper():
+    payloads = await capturar_payload(rentcars_url)
 
     if not payloads:
-        print("Nenhum payload capturado.")
-        return
+        raise HTTPException(status_code=404, detail="Nenhum dado encontrado")
 
-    print(f"Capturados {len(payloads)} batches.")
-
-    # Parse e exibição dos dados
+    carros = []
     for batch in payloads:
-        carros = parse_batch(batch)
-        for carro in carros:
-            print(carro)
+        carros.extend(parse_batch(batch))
 
-if __name__ == "__main__":
-    asyncio.run(main())
+    return carros
