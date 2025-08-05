@@ -1,33 +1,25 @@
 import asyncio
-import yaml
-from parser import parse_batch
-from pathlib import Path
 from playwright_handler import capturar_payload
+from parser import parse_batch
 
-# Caminho do arquivo YAML
-CONFIG_PATH = Path(__file__).parent / "carprice-scraper.yaml"
-config = yaml.safe_load(CONFIG_PATH.read_text())
+URL ="https://www.rentcars.com/pt-br/reserva/listar/9-1754438400-9-1754485200-0-0-0-0-0-0-0-0"
 
-rentcars_url = config["rentcars"]["url"]
-browser_type = config["rentcars"]["browser"]
 
-print(f"Scraping URL: {rentcars_url} usando {browser_type}")
+async def main():
+    print("Iniciando scraping...")
+    payloads = await capturar_payload(URL)
 
-async def scraper():
-    # Chama a função que usa Playwright para capturar os dados
-    print("Scraper ativado! Loading...")
-    payloads = await capturar_payload(rentcars_url)
+    if not payloads:
+        print("Nenhum payload capturado.")
+        return
 
-    print(f"Total payloads capturados: {len(payloads)}")
+    print(f"Capturados {len(payloads)} batches.")
 
-    carros = []
+    # Parse e exibição dos dados
     for batch in payloads:
-        carros.extend(parse_batch(batch))
-
-    print(f"Carros processados: {len(carros)}")
-    for carro in carros:
-        print(carro)
-
+        carros = parse_batch(batch)
+        for carro in carros:
+            print(carro)
 
 if __name__ == "__main__":
-    asyncio.run(scraper())
+    asyncio.run(main())

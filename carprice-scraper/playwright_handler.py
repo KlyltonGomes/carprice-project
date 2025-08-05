@@ -32,7 +32,7 @@ async def capturar_payload(url: str):
 
         await page.goto(url, wait_until="networkidle")
 
-        await asyncio.sleep(15)  # Espera requisições adicionais
+        await asyncio.sleep(19)  # Espera requisições adicionais
 
         await browser.close()
 
