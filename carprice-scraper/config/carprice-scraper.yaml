@@ -1,0 +1,4 @@
+rentcars:
+  url: "https://www.rentcars.com/pt-br/reserva/listar/9-1754485200-9-1754571600-0-0-0-0-0-0-0-0"
+  browser: "chromium"
+

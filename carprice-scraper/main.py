@@ -1,9 +1,10 @@
 import asyncio
+import read_url
+
 from playwright_handler import capturar_payload
 from parser import parse_batch
 
-URL ="https://www.rentcars.com/pt-br/reserva/listar/9-1754438400-9-1754485200-0-0-0-0-0-0-0-0"
-
+URL = read_url.ler_url()
 
 async def main():
     print("Iniciando scraping...")
