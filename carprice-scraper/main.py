@@ -1,8 +1,10 @@
 import asyncio
+
 import read_url
 
 from playwright_handler import capturar_payload
 from parser import parse_batch
+from producer import publicar_dados_producer
 
 URL = read_url.ler_url()
 
@@ -20,6 +22,8 @@ async def main():
     for batch in payloads:
         carros = parse_batch(batch)
         for carro in carros:
+            publicar_dados_producer(carro)
+
             print(carro)
 
 if __name__ == "__main__":

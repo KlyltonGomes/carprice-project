@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY requirements.txt .
 
-# Instala dependências para o Chromium
+# Instala dependências necessárias para o Chromium
 RUN apt-get update && apt-get install -y wget gnupg ca-certificates \
     fonts-liberation libatk1.0-0 libatk-bridge2.0-0 libnss3 libxkbcommon0 \
     libgtk-3-0 libx11-xcb1 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 \
@@ -12,8 +12,8 @@ RUN apt-get update && apt-get install -y wget gnupg ca-certificates \
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Instala o Chromium dentro do container
-RUN playwright install chromium
+# Instala o Chromium para Playwright
+RUN python -m playwright install chromium
 
 COPY . .
 
