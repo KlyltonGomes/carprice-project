@@ -9,9 +9,37 @@ connection_parameters = pika.ConnectionParameters(
         password=os.getenv('RABBITMQ_PASS')
     )
 )
-#abrir conexao
-connection = pika.BlockingConnection(connection_parameters)
 
-#abrir canal e conectar o rabbit e declarar o nome da fila
+connection = pika.BlockingConnection(connection_parameters)
 channel = connection.channel()
-channel.queue_declare(queue=os.getenv('RABBITMQ_QUEUE'))
+
+queue_name = os.getenv('RABBITMQ_QUEUE')
+
+channel.queue_declare(queue=queue_name, durable=True)
+
+
+channel.exchange_declare(
+    exchange='scraper_exchanger',
+    exchange_type='direct',
+    durable=True
+)
+
+channel.queue_bind(
+    exchange='scraper_exchanger',
+    queue='carprice_queue',
+    routing_key=queue_name
+)
+
+channel.basic_publish(
+    exchange='scraper_exchanger',
+    routing_key=queue_name,
+    body='Hello world!',
+    properties=pika.BasicProperties(
+        delivery_mode=2
+    )
+
+)
+
+print("Mensagem enviada com sucesso")
+
+connection.close()
