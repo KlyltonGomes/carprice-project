@@ -34,18 +34,18 @@ async def capturar_payload(url: str):
 
         try:
             print(f"[INFO] Tentando acessar (networkidle): {url}")
-            await page.goto(url, wait_until="networkidle", timeout=60000)
+            await page.goto(url, wait_until="networkidle", timeout=80000)
         except PlaywrightTimeoutError:
             print("[AVISO] Timeout com 'networkidle'. Tentando com 'load'...")
             try:
-                await page.goto(url, wait_until="load", timeout=60000)
+                await page.goto(url, wait_until="load", timeout=70000)
             except PlaywrightTimeoutError:
                 print(f"[ERRO] Falha ao carregar página: {url}")
                 await browser.close()
                 return payloads  # Retorna o que já tiver capturado (se algo)
 
         # Aguarda requisições adicionais
-        await asyncio.sleep(25)
+        await asyncio.sleep(30)
 
         await browser.close()
         return payloads

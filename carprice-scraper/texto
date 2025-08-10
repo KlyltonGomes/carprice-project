@@ -35,6 +35,20 @@ services:
     networks:
       - carprice-network
 
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+    ports:
+      - 8080:80
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - carprice-network
+
   carprice-scraper:
     build:
       context: ./carprice-scraper

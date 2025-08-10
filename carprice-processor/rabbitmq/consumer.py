@@ -1,28 +1,40 @@
 import json
 import os
 import time
+
 import pika
-from schemas import CarItem
-from db import SessionLocal
-from models import Car
 from sqlalchemy.exc import IntegrityError
 
-RABBITMQ_HOST = os.getenv("RABBITMQ_HOST", "rabbitmq")
+from bd.db import SessionLocal
+from models import Carro
+from schemas import CarroItem
+
+RABBITMQ_HOST = os.getenv("RABBITMQ_HOST", "")
 RABBITMQ_USER = os.getenv("RABBITMQ_USER", "user")
 RABBITMQ_PASS = os.getenv("RABBITMQ_PASS", "password")
 QUEUE_NAME = os.getenv("RABBITMQ_QUEUE", "carprice_queue")
-
 
 def process_message(ch, method, properties, body):
     session = SessionLocal()
     try:
         data = json.loads(body)
-        car = CarItem(**data)
-        db_car = Car(
+        car = CarroItem(**data)
+        db_car = Carro(
             id=car.id,
-            nome=car.nome,
+            veiculo=car.nome,
+            afiliado=car.afiliado,
+            lp=car.lp,
+            locadora=car.locadora,
+            categoria=car.categoria,
+            subcategoria=car.subcategoria,
+            pais=car.pais,
+            tipo=car.tipo,
+            mercado=car.mercado,
+            local_id=car.local_id,
+            local_nome=car.local_nome,
             preco=car.preco,
             quantidade=car.quantidade,
+
         )
         session.merge(db_car)
         session.commit()
@@ -35,11 +47,9 @@ def process_message(ch, method, properties, body):
     finally:
         session.close()
 
-
 def start_consumer():
     credentials = pika.PlainCredentials(RABBITMQ_USER, RABBITMQ_PASS)
 
-    # Espera o RabbitMQ ficar pronto
     for attempt in range(10):
         try:
             connection = pika.BlockingConnection(

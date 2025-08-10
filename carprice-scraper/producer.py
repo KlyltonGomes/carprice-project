@@ -1,7 +1,6 @@
 import json
 import os
 import pika
-from pika import connection
 
 
 def publicar_dados_producer(dados_carro:dir):
