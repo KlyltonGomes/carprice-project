@@ -1,5 +1,8 @@
 import yaml
 from pathlib import Path
+import logging
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def ler_url() -> str:
     yaml_path = Path(__file__).parent/"config"/"carprice-scraper.yaml"
@@ -12,4 +15,4 @@ def ler_url() -> str:
     print(rentcars_url)
     return rentcars_url
 
-#url = ler_url()
+

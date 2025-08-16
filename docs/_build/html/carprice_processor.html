@@ -1,0 +1,204 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt-BR" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CarPrice Processor &mdash; Documentação CarPrice-Project 1.0.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=c0c8e3fa"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/translations.js?v=daa5921a"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Buscar" href="search.html" />
+    <link rel="prev" title="CarPrice Scraper" href="carprice_scraper.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            CarPrice-Project
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
+              <p class="caption" role="heading"><span class="caption-text">Conteúdo</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="carprice_scraper.html">CarPrice Scraper</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CarPrice Processor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#schemas.schema.CarroItem"><code class="docutils literal notranslate"><span class="pre">CarroItem</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#schemas.schema.CarroItem.afiliado"><code class="docutils literal notranslate"><span class="pre">CarroItem.afiliado</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#schemas.schema.CarroItem.categoria"><code class="docutils literal notranslate"><span class="pre">CarroItem.categoria</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#schemas.schema.CarroItem.id"><code class="docutils literal notranslate"><span class="pre">CarroItem.id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#schemas.schema.CarroItem.locadora"><code class="docutils literal notranslate"><span class="pre">CarroItem.locadora</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#schemas.schema.CarroItem.local_id"><code class="docutils literal notranslate"><span class="pre">CarroItem.local_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#schemas.schema.CarroItem.local_nome"><code class="docutils literal notranslate"><span class="pre">CarroItem.local_nome</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#schemas.schema.CarroItem.lp"><code class="docutils literal notranslate"><span class="pre">CarroItem.lp</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#schemas.schema.CarroItem.mercado"><code class="docutils literal notranslate"><span class="pre">CarroItem.mercado</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#schemas.schema.CarroItem.nome"><code class="docutils literal notranslate"><span class="pre">CarroItem.nome</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#schemas.schema.CarroItem.pais"><code class="docutils literal notranslate"><span class="pre">CarroItem.pais</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#schemas.schema.CarroItem.preco"><code class="docutils literal notranslate"><span class="pre">CarroItem.preco</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#schemas.schema.CarroItem.quantidade"><code class="docutils literal notranslate"><span class="pre">CarroItem.quantidade</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#schemas.schema.CarroItem.subcategoria"><code class="docutils literal notranslate"><span class="pre">CarroItem.subcategoria</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#schemas.schema.CarroItem.tipo"><code class="docutils literal notranslate"><span class="pre">CarroItem.tipo</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Menu de navegação móvel" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CarPrice-Project</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Navegação da página">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">CarPrice Processor</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/carprice_processor.rst.txt" rel="nofollow"> Ver código-fonte da página</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-schemas.schema">
+<span id="carprice-processor"></span><h1>CarPrice Processor<a class="headerlink" href="#module-schemas.schema" title="Link para este cabeçalho"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="schemas.schema.CarroItem">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">schemas.schema.</span></span><span class="sig-name descname"><span class="pre">CarroItem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nome</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">afiliado</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">locadora</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">categoria</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subcategoria</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pais</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tipo</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mercado</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_nome</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preco</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quantidade</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#schemas.schema.CarroItem" title="Link para esta definição"></a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.schema.CarroItem.afiliado">
+<span class="sig-name descname"><span class="pre">afiliado</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#schemas.schema.CarroItem.afiliado" title="Link para esta definição"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.schema.CarroItem.categoria">
+<span class="sig-name descname"><span class="pre">categoria</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#schemas.schema.CarroItem.categoria" title="Link para esta definição"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.schema.CarroItem.id">
+<span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#schemas.schema.CarroItem.id" title="Link para esta definição"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.schema.CarroItem.locadora">
+<span class="sig-name descname"><span class="pre">locadora</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#schemas.schema.CarroItem.locadora" title="Link para esta definição"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.schema.CarroItem.local_id">
+<span class="sig-name descname"><span class="pre">local_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#schemas.schema.CarroItem.local_id" title="Link para esta definição"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.schema.CarroItem.local_nome">
+<span class="sig-name descname"><span class="pre">local_nome</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#schemas.schema.CarroItem.local_nome" title="Link para esta definição"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.schema.CarroItem.lp">
+<span class="sig-name descname"><span class="pre">lp</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#schemas.schema.CarroItem.lp" title="Link para esta definição"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.schema.CarroItem.mercado">
+<span class="sig-name descname"><span class="pre">mercado</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#schemas.schema.CarroItem.mercado" title="Link para esta definição"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.schema.CarroItem.nome">
+<span class="sig-name descname"><span class="pre">nome</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#schemas.schema.CarroItem.nome" title="Link para esta definição"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.schema.CarroItem.pais">
+<span class="sig-name descname"><span class="pre">pais</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#schemas.schema.CarroItem.pais" title="Link para esta definição"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.schema.CarroItem.preco">
+<span class="sig-name descname"><span class="pre">preco</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#schemas.schema.CarroItem.preco" title="Link para esta definição"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.schema.CarroItem.quantidade">
+<span class="sig-name descname"><span class="pre">quantidade</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#schemas.schema.CarroItem.quantidade" title="Link para esta definição"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.schema.CarroItem.subcategoria">
+<span class="sig-name descname"><span class="pre">subcategoria</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#schemas.schema.CarroItem.subcategoria" title="Link para esta definição"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="schemas.schema.CarroItem.tipo">
+<span class="sig-name descname"><span class="pre">tipo</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#schemas.schema.CarroItem.tipo" title="Link para esta definição"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Rodapé">
+        <a href="carprice_scraper.html" class="btn btn-neutral float-left" title="CarPrice Scraper" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Direitos autorais 2025, Klylton Gomes de Souza.</p>
+  </div>
+
+  Compilado com <a href="https://www.sphinx-doc.org/">Sphinx</a> usando um
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    fornecido por <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
