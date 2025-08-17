@@ -202,7 +202,7 @@ def publicar_dados_producer(dados_carro:dict):
             #password=os.getenv('RABBITMQ_PASS')
        # )
    # )
-    rabbit_url = os.getenv("RABBITMQ_URL")
+    rabbit_url = os.getenv('RABBITMQ_URL')
 
     connection_parameters = pika.URLParameters(rabbit_url)
 
