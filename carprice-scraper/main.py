@@ -42,9 +42,8 @@ async def main():
         for carro in carros:
             publicar_dados_producer(carro)
 
-            #logging.debug(f"debbug funcionando: {carro}")
+            logging.debug(f"Carros capturados: {carro}")
 
-            #print(f"print , debbug nao funcionou!{carro}")
 
 if __name__ == "__main__":
     asyncio.run(main())
