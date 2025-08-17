@@ -7,7 +7,7 @@ services:
     volumes:
       - ./carprice-scraper:/app
     env_file:
-      - .env_local
+      - .env
     command: python main.py
 
   carprice-processor:
@@ -16,5 +16,5 @@ services:
     volumes:
       - ./carprice-processor:/app
     env_file:
-      - .env_local
+      - .env
     command: python main.py
