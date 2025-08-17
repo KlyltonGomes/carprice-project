@@ -45,11 +45,9 @@
               <p class="caption" role="heading"><span class="caption-text">Conteúdo</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">CarPrice Scraper</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#main.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#playwright_handler.capturar_payload"><code class="docutils literal notranslate"><span class="pre">capturar_payload()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#parser.parse_batch"><code class="docutils literal notranslate"><span class="pre">parse_batch()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#parser.parse_pr_item"><code class="docutils literal notranslate"><span class="pre">parse_pr_item()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#producer.publicar_dados_producer"><code class="docutils literal notranslate"><span class="pre">publicar_dados_producer()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -78,26 +76,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-main">
-<span id="carprice-scraper"></span><h1>CarPrice Scraper<a class="headerlink" href="#module-main" title="Link para este cabeçalho"></a></h1>
+  <section id="module-playwright_handler">
+<span id="carprice-scraper"></span><h1>CarPrice Scraper<a class="headerlink" href="#module-playwright_handler" title="Link para este cabeçalho"></a></h1>
 <dl class="py function">
-<dt class="sig sig-object py" id="main.main">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.main" title="Link para esta definição"></a></dt>
-<dd><p>Função principal assíncrona que executa o fluxo de scraping, parsing e publicação dos dados.</p>
-<p>Passos:</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p>Inicia o processo de scraping usando a URL configurada.</p></li>
-<li><p>Captura os payloads retornados do scraping.</p></li>
-<li><p>Caso não haja payloads, imprime uma mensagem e encerra.</p></li>
-<li><p>Para cada batch capturado, faz o parsing para extrair os dados dos carros.</p></li>
-<li><p>Publica cada dado de carro usando o produtor definido.</p></li>
-<li><p>Exibe cada carro no console para monitoramento.</p></li>
-</ol>
-</div></blockquote>
-</dd></dl>
-
-<dl class="py function" id="module-playwright_handler">
 <dt class="sig sig-object py" id="playwright_handler.capturar_payload">
 <em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">playwright_handler.</span></span><span class="sig-name descname"><span class="pre">capturar_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#playwright_handler.capturar_payload" title="Link para esta definição"></a></dt>
 <dd><p>Abre a página com Playwright, intercepta a request POST para Google Analytics
@@ -173,136 +154,6 @@ Quebra essa string em partes e transforma em um dicionário com campos identific
     <span class="k">elif</span> <span class="n">part</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;af&quot;</span><span class="p">):</span>
 </pre></div>
 </div>
-</dd></dl>
-
-<dl class="py function" id="module-producer">
-<dt class="sig sig-object py" id="producer.publicar_dados_producer">
-<span class="sig-prename descclassname"><span class="pre">producer.</span></span><span class="sig-name descname"><span class="pre">publicar_dados_producer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dados_carro</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#producer.publicar_dados_producer" title="Link para esta definição"></a></dt>
-<dd><p>Publica dados no RabbitMQ via exchange e fila configuradas.</p>
-<p>Esta função recebe uma lista de dicionários contendo dados dos carros,
-conecta-se ao RabbitMQ usando as variáveis de ambiente para host, usuário e senha,
-declara a exchange e a fila, faz o binding, e publica a mensagem em formato JSON.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parâmetros<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>dados_carro</strong> (<em>List</em><em>[</em><em>Dict</em><em>]</em>) – Lista de dicionários com os dados dos carros a serem enviados.</p>
-</dd>
-<dt class="field-even">Levanta<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>pika.exceptions.AMQPConnectionError</strong> – Caso a conexão com o RabbitMQ falhe.</p>
-</dd>
-</dl>
-<p>Mini tutorial de como conectar e publicar no RabbitMq!
-Primeiro crie um arquivo .py e dentro uma função que recebe como argumento dados do tipo dict.
-Essa será a função para publicar os dados no PRODUCER do RabbitMQ.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">publicar_dados_producer</span><span class="p">(</span><span class="n">argumento</span><span class="p">:</span><span class="nb">dict</span><span class="p">):</span>
-</pre></div>
-</div>
-<p>Primeiro passando o parametro e credencial do RabbitMQ, crie um arquivo .env na raiz do projeto
-onde serão armazenadas as suas informações pessoais.</p>
-<p>exemplo:
-Crie um arquivo .env e adicione esse script</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">RABBITMQ_HOST</span><span class="o">=</span><span class="n">rabbitmq</span>
-<span class="n">RABBITMQ_USER</span><span class="o">=</span><span class="n">user</span>
-<span class="n">RABBITMQ_PASS</span><span class="o">=</span><span class="n">password</span>
-<span class="n">RABBITMQ_QUEUE</span><span class="o">=</span><span class="n">nome_da_queue</span>
-</pre></div>
-</div>
-<p>Criando uma conexão entre seu código Python e o servidor RabbitMQ</p>
-<p>import ‘os’ para usar os.getenv, assim terá acesso aos dados do seu .env</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">connection_parameters</span> <span class="o">=</span> <span class="n">pika</span><span class="o">.</span><span class="n">ConnectionParameters</span><span class="p">(</span>
-<span class="n">host</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;RABBITMQ_HOST&#39;</span><span class="p">),</span>
-<span class="n">port</span><span class="o">=</span><span class="mi">5672</span><span class="p">,</span>
-<span class="n">credentials</span><span class="o">=</span><span class="n">pika</span><span class="o">.</span><span class="n">PlainCredentials</span><span class="p">(</span>
-    <span class="n">username</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;RABBITMQ_USER&#39;</span><span class="p">),</span>
-    <span class="n">password</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;RABBITMQ_PASS&#39;</span><span class="p">)</span>
-<span class="p">))</span>
-</pre></div>
-</div>
-<p>Abre uma conexão TCP síncrona (bloqueante) entre seu programa Python e o servidor RabbitMQ, usando os parâmetros de conexão (host, porta, usuário, senha)
-definidos em connection_parameters.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">connection</span> <span class="o">=</span> <span class="n">pika</span><span class="o">.</span><span class="n">BlockingConnection</span><span class="p">(</span><span class="n">connection_parameters</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>canal é uma via de comunicação leve para enviar e receber mensagens. Você pode ter vários canais na mesma conexão, e o RabbitMQ recomenda usar canais para operações</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">channel</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">channel</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>cria uma fila no RabbitMQ com o nome especificado no arquivo .env</p>
-<p>-&gt; RABBITMQ_QUEUE=nome_da_queue</p>
-<p>queue=queue_name - &gt; atribui o nome a fila que será declarada!</p>
-<p>durable=True -&gt; caso o servidor reinicialize a fila ainda existirá!</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">queue_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;RABBITMQ_QUEUE&#39;</span><span class="p">)</span>
-<span class="n">channel</span><span class="o">.</span><span class="n">queue_declare</span><span class="p">(</span><span class="n">queue</span><span class="o">=</span><span class="n">queue_name</span><span class="p">,</span> <span class="n">durable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Declaração de um EXCHANGE:
-Um exchange é o roteador da mensageria no RabbitMQ.</p>
-<p>Ele é responsável por receber mensagens dos produtores e encaminhá-las para as filas apropriadas,
-com base nas regras definidas pelos bindings.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">channel</span><span class="o">.</span><span class="n">exchange_declare</span><span class="p">(</span>
-<span class="n">exchange</span><span class="o">=</span><span class="s1">&#39;scraper_exchanger&#39;</span><span class="p">,</span>
-<span class="n">exchange_type</span><span class="o">=</span><span class="s1">&#39;fanout&#39;</span><span class="p">,</span>
-<span class="n">durable</span><span class="o">=</span><span class="kc">True</span> <span class="p">)</span>
-</pre></div>
-</div>
-<p>Um binding é uma ligação entre um exchange e uma fila no RabbitMQ. Ele define a regra ou critério que o exchange usa para encaminhar mensagens para essa fila específica.
-Sem bindings, as mensagens enviadas para um exchange não seriam entregues a nenhuma fila.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">channel</span><span class="o">.</span><span class="n">queue_bind</span><span class="p">(</span>
-<span class="n">exchange</span><span class="o">=</span><span class="s1">&#39;scraper_exchanger&#39;</span><span class="p">,</span>
-<span class="n">queue</span><span class="o">=</span><span class="s1">&#39;carprice_queue&#39;</span><span class="p">,</span>
-<span class="n">routing_key</span><span class="o">=</span><span class="n">queue_name</span> <span class="p">)</span>
-</pre></div>
-</div>
-<p>Converte o objeto Python dados_carro (dicionário) em uma string JSON, json.dumps() significa “dump string”, transforma o dado em uma representação textual JSON.
-RabbitMQ trabalha com mensagens em formato texto ou bytes.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mensagem</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">dados_carro</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>O producer é o responsável por enviar mensagens para o sistema de mensageria RabbitMQ.
-Envia a mensagem para a fila. -&gt; queue=’carprice_queue’</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">channel</span><span class="o">.</span><span class="n">basic_publish</span><span class="p">(</span>
-<span class="n">exchange</span><span class="o">=</span><span class="s1">&#39;scraper_exchanger&#39;</span><span class="p">,</span>
-<span class="n">routing_key</span><span class="o">=</span><span class="n">queue_name</span><span class="p">,</span>
-<span class="n">body</span><span class="o">=</span><span class="n">mensagem</span><span class="p">,</span>
-<span class="n">properties</span><span class="o">=</span><span class="n">pika</span><span class="o">.</span><span class="n">BasicProperties</span><span class="p">(</span>
-    <span class="n">delivery_mode</span><span class="o">=</span><span class="mi">2</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-<p>Poucas mensagens → abre e fecha rápido.</p>
-<p>Muitas mensagens → abre e mantém aberta.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>Conexão curta → você cria e fecha a conexão dentro da função que publica.</p>
-<p>Cada vez que chama a função, abre/fecha a conexão.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">publicar_dados_producer</span><span class="p">(</span><span class="n">dados_carro</span><span class="p">):</span>
-<span class="n">connection</span> <span class="o">=</span> <span class="n">pika</span><span class="o">.</span><span class="n">BlockingConnection</span><span class="p">(</span><span class="n">connection_parameters</span><span class="p">)</span>
-<span class="n">channel</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">channel</span><span class="p">()</span>
-<span class="n">channel</span><span class="o">.</span><span class="n">basic_publish</span><span class="p">(</span><span class="n">exchange</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">routing_key</span><span class="o">=</span><span class="s1">&#39;fila&#39;</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="s1">&#39;msg&#39;</span><span class="p">)</span>
-<span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>Conexão longa → você cria a conexão uma vez fora da função e só fecha no final.</p>
-<p>A conexão fica aberta enquanto o programa roda.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">connection</span> <span class="o">=</span> <span class="n">pika</span><span class="o">.</span><span class="n">BlockingConnection</span><span class="p">(</span><span class="n">connection_parameters</span><span class="p">)</span>
-<span class="n">channel</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">channel</span><span class="p">()</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">publicar_dados_producer</span><span class="p">(</span><span class="n">dados_carro</span><span class="p">):</span>
-<span class="n">channel</span><span class="o">.</span><span class="n">basic_publish</span><span class="p">(</span><span class="n">exchange</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">routing_key</span><span class="o">=</span><span class="s1">&#39;fila&#39;</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="s1">&#39;msg&#39;</span><span class="p">)</span>
-
-<span class="c1">#Loop enviando mensagens...</span>
-<span class="k">for</span> <span class="n">carro</span> <span class="ow">in</span> <span class="n">carros</span><span class="p">:</span>
-    <span class="n">publicar_dados_producer</span><span class="p">(</span><span class="n">carro</span><span class="p">)</span>
-
-<span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>Para o CarPrice-project que pode capturar vários carros por vez, o ideal é abrir a conexão antes de começar a publicar e fechá-la só no final.</p>
-<p>Para o projeto seria uma conexão longa,</p>
-<p>pois se abrir e fechar a conexão para cada carro (Conexão curta)</p>
-<p>.Vai ter mais latência por mensagem</p>
-<p>.Pode sobrecarregar o RabbitMQ com muitas conexões curtas</p>
-<p>.Pode dar erros de “connection reset” se for muito rápido</p>
 </dd></dl>
 
 </section>
