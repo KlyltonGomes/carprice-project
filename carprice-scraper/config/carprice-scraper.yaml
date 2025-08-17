@@ -1,5 +1,5 @@
 rentcars:
 
-  url: "https://www.rentcars.com/pt-br/reserva/listar/9-1755435600-9-1755522000-0-0-0-0-0-0-0-0"
+  url: "https://www.rentcars.com/pt-br/reserva/listar/18894-1755522000-18894-1755608400-0-0-0-0-0-0-0-0"
   browser: "chromium"
 
