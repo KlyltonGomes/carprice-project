@@ -1,17 +1,13 @@
 import json
 import os
 import time
-
 import pika
 from sqlalchemy.exc import IntegrityError
-
 from bd.db import SessionLocal
 from models import Carro
 from schemas import CarroItem
 
-RABBITMQ_HOST = os.getenv("RABBITMQ_HOST", "")
-RABBITMQ_USER = os.getenv("RABBITMQ_USER", "user")
-RABBITMQ_PASS = os.getenv("RABBITMQ_PASS", "password")
+RABBITMQ_URL = os.getenv("RABBITMQ_URL")
 QUEUE_NAME = os.getenv("RABBITMQ_QUEUE", "carprice_queue")
 
 def process_message(ch, method, properties, body):
@@ -34,7 +30,6 @@ def process_message(ch, method, properties, body):
             local_nome=car.local_nome,
             preco=car.preco,
             quantidade=car.quantidade,
-
         )
         session.merge(db_car)
         session.commit()
@@ -48,13 +43,10 @@ def process_message(ch, method, properties, body):
         session.close()
 
 def start_consumer():
-    credentials = pika.PlainCredentials(RABBITMQ_USER, RABBITMQ_PASS)
-
     for attempt in range(10):
         try:
-            connection = pika.BlockingConnection(
-                pika.ConnectionParameters(host=RABBITMQ_HOST, credentials=credentials)
-            )
+            params = pika.URLParameters(RABBITMQ_URL)
+            connection = pika.BlockingConnection(params)
             break
         except pika.exceptions.AMQPConnectionError:
             print(f"Tentativa {attempt+1}/10: RabbitMQ não disponível, tentando novamente...")
@@ -65,7 +57,9 @@ def start_consumer():
 
     channel = connection.channel()
     channel.queue_declare(queue=QUEUE_NAME, durable=True)
-
     channel.basic_consume(queue=QUEUE_NAME, on_message_callback=process_message)
     print("Esperando mensagens...")
     channel.start_consuming()
+
+if __name__ == "__main__":
+    start_consumer()
