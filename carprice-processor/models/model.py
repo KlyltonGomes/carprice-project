@@ -1,8 +1,11 @@
 from sqlalchemy import Column, String, Float, Integer, DateTime
 from sqlalchemy.orm import declarative_base
 from datetime import datetime
+import pytz
 
 Base = declarative_base()
+BR_TZ = pytz.timezone('America/Sao_Paulo')
+
 
 class Carro(Base):
     __tablename__ = "carros"
@@ -20,4 +23,5 @@ class Carro(Base):
     local_nome = Column(String)
     preco = Column(Float)
     quantidade = Column(Integer)
-    data_coleta = Column(DateTime, default=datetime.utcnow)
+    #data_coleta = Column(DateTime, default=datetime.utcnow)
+    data_coleta = Column(DateTime, default=lambda: datetime.now(BR_TZ))

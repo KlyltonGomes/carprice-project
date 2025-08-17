@@ -33,11 +33,11 @@ def publicar_dados_producer(dados_carro:dict):
         def publicar_dados_producer(argumento:dict):
 
 
-    Primeiro passando o parametro e credencial do RabbitMQ, crie um arquivo .env_local na raiz do projeto
+    Primeiro passando o parametro e credencial do RabbitMQ, crie um arquivo .env na raiz do projeto
     onde serão armazenadas as suas informações pessoais.
 
     exemplo:
-    Crie um arquivo .env_local e adicione esse script
+    Crie um arquivo .env e adicione esse script
 
 
     .. code-block:: python
@@ -50,7 +50,7 @@ def publicar_dados_producer(dados_carro:dict):
 
     Criando uma conexão entre seu código Python e o servidor RabbitMQ
 
-    import 'os' para usar os.getenv, assim terá acesso aos dados do seu .env_local
+    import 'os' para usar os.getenv, assim terá acesso aos dados do seu .env
 
     .. code-block:: python
 
@@ -80,7 +80,7 @@ def publicar_dados_producer(dados_carro:dict):
 
 
 
-    cria uma fila no RabbitMQ com o nome especificado no arquivo .env_local
+    cria uma fila no RabbitMQ com o nome especificado no arquivo .env
 
     -> RABBITMQ_QUEUE=nome_da_queue
 
@@ -194,17 +194,17 @@ def publicar_dados_producer(dados_carro:dict):
     .Pode dar erros de “connection reset” se for muito rápido
 
     """
-    #connection_parameters = pika.ConnectionParameters(
-       # host=os.getenv('RABBITMQ_HOST'),
-       # port=os.getenv('RABBITMQ_PORT'),
-        #credentials=pika.PlainCredentials(
-            #username=os.getenv('RABBITMQ_USER'),
-            #password=os.getenv('RABBITMQ_PASS')
-       # )
-   # )
-    rabbit_url = os.getenv('RABBITMQ_URL')
-
-    connection_parameters = pika.URLParameters(rabbit_url)
+    port = int(os.getenv('RABBITMQ_PORT', 5672))
+    connection_parameters = pika.ConnectionParameters(
+        host=os.getenv('RABBITMQ_HOST', 'localhost'),
+        port=port,
+        credentials=pika.PlainCredentials(
+            username=os.getenv('RABBITMQ_USER', 'user'),
+            password=os.getenv('RABBITMQ_PASS', 'password')
+        )
+    )
+    #rabbit_url = os.getenv('RABBITMQ_URL')
+    #connection_parameters = pika.URLParameters(rabbit_url)
 
     connection = pika.BlockingConnection(connection_parameters)
 

@@ -7,7 +7,18 @@ from bd.db import SessionLocal
 from models import Carro
 from schemas import CarroItem
 
-RABBITMQ_URL = os.getenv("RABBITMQ_URL")
+params = pika.ConnectionParameters(
+    host=os.getenv("RABBITMQ_HOST", "localhost"),
+    port=int(os.getenv("RABBITMQ_PORT", 5672)),
+    credentials=pika.PlainCredentials(
+        username=os.getenv("RABBITMQ_USER", "guest"),
+        password=os.getenv("RABBITMQ_PASS", "guest")
+    )
+)
+connection = pika.BlockingConnection(params)
+
+
+#RABBITMQ_URL = os.getenv("RABBITMQ_URL")
 QUEUE_NAME = os.getenv("RABBITMQ_QUEUE", "carprice_queue")
 
 def process_message(ch, method, properties, body):
@@ -45,7 +56,7 @@ def process_message(ch, method, properties, body):
 def start_consumer():
     for attempt in range(10):
         try:
-            params = pika.URLParameters(RABBITMQ_URL)
+            #params = pika.URLParameters(RABBITMQ_URL)
             connection = pika.BlockingConnection(params)
             break
         except pika.exceptions.AMQPConnectionError:
