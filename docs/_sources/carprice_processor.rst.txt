@@ -1,0 +1,27 @@
+CarPrice Processor
+==================
+
+.. automodule:: main
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+.. automodule:: bd.bd
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+.. automodule:: models.model
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+.. automodule:: rabbitmq.consumer
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+.. automodule:: schemas.schema
+    :members:
+    :undoc-members:
+    :show-inheritance:
