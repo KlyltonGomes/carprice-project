@@ -1,0 +1,21 @@
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+POSTGRES_DB=carprice
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+
+# URL para uso interno (entre containers)
+DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
+
+# URL para uso externo (fora do Docker, ex.: pgAdmin/DBeaver local)
+#DATABASE_URL_EXTERNO=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@localhost:5433/${POSTGRES_DB}
+
+RABBITMQ_PORT=5672
+RABBITMQ_HOST=rabbitmq
+RABBITMQ_USER=user
+RABBITMQ_PASS=password
+RABBITMQ_QUEUE=carprice_queue
+
+
+#PGADMIN_DEFAULT_EMAIL=pgadmin4@pgadmin.org
+#PGADMIN_DEFAULT_PASSWORD=pgadmin4

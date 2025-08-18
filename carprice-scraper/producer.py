@@ -33,11 +33,11 @@ def publicar_dados_producer(dados_carro:dict):
         def publicar_dados_producer(argumento:dict):
 
 
-    Primeiro passando o parametro e credencial do RabbitMQ, crie um arquivo .env na raiz do projeto
+    Primeiro passando o parametro e credencial do RabbitMQ, crie um arquivo -.env-local na raiz do projeto
     onde serão armazenadas as suas informações pessoais.
 
     exemplo:
-    Crie um arquivo .env e adicione esse script
+    Crie um arquivo -.env-local e adicione esse script
 
 
     .. code-block:: python
@@ -50,7 +50,7 @@ def publicar_dados_producer(dados_carro:dict):
 
     Criando uma conexão entre seu código Python e o servidor RabbitMQ
 
-    import 'os' para usar os.getenv, assim terá acesso aos dados do seu .env
+    import 'os' para usar os.getenv, assim terá acesso aos dados do seu -.env-local
 
     .. code-block:: python
 
@@ -80,7 +80,7 @@ def publicar_dados_producer(dados_carro:dict):
 
 
 
-    cria uma fila no RabbitMQ com o nome especificado no arquivo .env
+    cria uma fila no RabbitMQ com o nome especificado no arquivo -.env-local
 
     -> RABBITMQ_QUEUE=nome_da_queue
 
