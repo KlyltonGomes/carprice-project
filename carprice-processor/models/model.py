@@ -24,4 +24,4 @@ class Carro(Base):
     preco = Column(Float)
     quantidade = Column(Integer)
     #data_coleta = Column(DateTime, default=datetime.utcnow)
-    data_coleta = Column(DateTime, default=lambda: datetime.now(BR_TZ))
+    data_coleta = Column(DateTime(timezone=True), default=lambda: datetime.now(BR_TZ))
