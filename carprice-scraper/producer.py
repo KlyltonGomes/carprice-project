@@ -6,8 +6,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 #level=logging.WARNING
-#level=logging.DEBUG
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+#level=logging.INFO
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 def publicar_dados_producer(dados_carro:dict):
@@ -194,17 +194,17 @@ def publicar_dados_producer(dados_carro:dict):
     .Pode dar erros de “connection reset” se for muito rápido
 
     """
-    port = int(os.getenv('RABBITMQ_PORT', 5672))
-    connection_parameters = pika.ConnectionParameters(
-        host=os.getenv('RABBITMQ_HOST', 'localhost'),
-        port=port,
-        credentials=pika.PlainCredentials(
-            username=os.getenv('RABBITMQ_USER', 'user'),
-            password=os.getenv('RABBITMQ_PASS', 'password')
-        )
-    )
-    #rabbit_url = os.getenv('RABBITMQ_URL')
-    #connection_parameters = pika.URLParameters(rabbit_url)
+    #port = int(os.getenv('RABBITMQ_PORT', 5672))
+    #connection_parameters = pika.ConnectionParameters(
+        #host=os.getenv('RABBITMQ_HOST', 'localhost'),
+        #port=port,
+        #credentials=pika.PlainCredentials(
+            #username=os.getenv('RABBITMQ_USER', 'user'),
+            #password=os.getenv('RABBITMQ_PASS', 'password')
+        #)
+    #)
+    rabbit_url = os.getenv('RABBITMQ_URL')
+    connection_parameters = pika.URLParameters(rabbit_url)
 
     connection = pika.BlockingConnection(connection_parameters)
 
@@ -241,7 +241,7 @@ def publicar_dados_producer(dados_carro:dict):
     )
 
 
-    logging.info(f"Mensagem enviada com sucesso")
+    logging.debug(f"Mensagem enviada com sucesso")
 
 
     connection.close()
