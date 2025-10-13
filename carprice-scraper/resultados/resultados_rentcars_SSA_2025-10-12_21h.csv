@@ -1,0 +1,51 @@
+﻿id,nome,afiliado,lp,locadora,categoria,subcategoria,pais,tipo,mercado,local_id,local_nome,preco,quantidade,cidade_retirada,cidade_devolucao,dias,hora_retirada,hora_devolucao
+56750,Fiat Mobi,Rentcars (Mobile),0,Foco,Vehicle,Econômico,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),126.04,1,SSA,,1,10:00,10:00
+56751,Peugeot 208,Rentcars (Mobile),0,Foco,Vehicle,Econômico,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),126.06,1,SSA,,1,10:00,10:00
+7575,Volkswagen Polo,Rentcars (Mobile),0,Foco,Vehicle,Compacto,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),126.15,1,SSA,,1,10:00,10:00
+18590,Chevrolet Spin,Rentcars (Mobile),0,Foco,Vehicle,Minivan,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),421.76,1,SSA,,1,10:00,10:00
+7507,Volkswagen T-Cross,Rentcars (Mobile),0,Foco,Vehicle,SUV,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),266.58,1,SSA,,1,10:00,10:00
+40807,Renault Kardian,Rentcars (Mobile),0,Foco,Vehicle,SUV,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),187.89,1,SSA,,1,10:00,10:00
+56752,Fiat Cronos,Rentcars (Mobile),0,Foco,Vehicle,Intermediário,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),187.81,1,SSA,,1,10:00,10:00
+569,Fiat Cronos,Rentcars (Mobile),0,Locadora Opaca,Vehicle,Intermediário,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),197.88,1,SSA,,1,10:00,10:00
+4878,Fiat Fiorino,Rentcars (Mobile),0,Locadora Opaca,Vehicle,Cargo,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),182.14,1,SSA,,1,10:00,10:00
+11280,Fiat Mobi,Rentcars (Mobile),0,Locadora Opaca,Vehicle,Econômico,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),138.77,1,SSA,,1,10:00,10:00
+36,Fiat Pulse,Rentcars (Mobile),0,Locadora Opaca,Vehicle,SUV,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),216.58,1,SSA,,1,10:00,10:00
+313,Fiat Strada,Rentcars (Mobile),0,Locadora Opaca,Vehicle,Utilitário,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),179.13,1,SSA,,1,10:00,10:00
+13763,Hyundai HB20,Rentcars (Mobile),0,Locadora Opaca,Vehicle,Compacto,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),198.32,1,SSA,,1,10:00,10:00
+14048,Hyundai HB20S,Rentcars (Mobile),0,Locadora Opaca,Vehicle,Intermediário,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),159.12,1,SSA,,1,10:00,10:00
+16696,Jeep Compass,Rentcars (Mobile),0,Locadora Opaca,Vehicle,SUV,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),306.5,1,SSA,,1,10:00,10:00
+30585,Jeep Renegade,Rentcars (Mobile),0,Locadora Opaca,Vehicle,SUV,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),230.68,1,SSA,,1,10:00,10:00
+6786,Volkswagen Polo,Rentcars (Mobile),0,Locadora Opaca,Vehicle,Econômico,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),143.48,1,SSA,,1,10:00,10:00
+5120,Volkswagen Virtus,Rentcars (Mobile),0,Locadora Opaca,Vehicle,Intermediário,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),203.89,1,SSA,,1,10:00,10:00
+19254,Fiat Mobi,Rentcars (Mobile),0,Localiza,Vehicle,Econômico,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),194.54,1,SSA,,1,10:00,10:00
+31746,Fiat Argo,Rentcars (Mobile),0,Localiza,Vehicle,Econômico,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),198.35,1,SSA,,1,10:00,10:00
+555,Volkswagen Polo,Rentcars (Mobile),0,Localiza,Vehicle,Compacto,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),252.86,1,SSA,,1,10:00,10:00
+5197,Chevrolet Spin,Rentcars (Mobile),0,Localiza,Vehicle,Minivan,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),475.22,1,SSA,,1,10:00,10:00
+5196,Jeep Renegade,Rentcars (Mobile),0,Localiza,Vehicle,SUV,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),297.58,1,SSA,,1,10:00,10:00
+26726,Volkswagen Tera,Rentcars (Mobile),0,Localiza,Vehicle,SUV,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),276.01,1,SSA,,1,10:00,10:00
+64394,Nissan Kicks,Rentcars (Mobile),0,Localiza,Vehicle,SUV,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),310.27,1,SSA,,1,10:00,10:00
+8353,Hyundai HB20S,Rentcars (Mobile),0,Localiza,Vehicle,Intermediário,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),261.74,1,SSA,,1,10:00,10:00
+15543,Hyundai HB20S,Rentcars (Mobile),0,Localiza,Vehicle,Intermediário,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),223.73,1,SSA,,1,10:00,10:00
+562,Volkswagen Saveiro,Rentcars (Mobile),0,Localiza,Vehicle,Utilitário,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),282.3,1,SSA,,1,10:00,10:00
+4718,Toyota Corolla,Rentcars (Mobile),0,Localiza,Vehicle,Premium,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),484.34,1,SSA,,1,10:00,10:00
+565,Chevrolet S10,Rentcars (Mobile),0,Localiza,Vehicle,Especial,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),1533.84,1,SSA,,1,10:00,10:00
+11325,Fiat Toro,Rentcars (Mobile),0,Localiza,Vehicle,Especial,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),824.39,1,SSA,,1,10:00,10:00
+158,Volkswagen Polo,Rentcars (Mobile),0,Unidas,Vehicle,Econômico,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),262.51,1,SSA,,1,10:00,10:00
+12785,Fiat Mobi,Rentcars (Mobile),0,Unidas,Vehicle,Econômico,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),261.53,1,SSA,,1,10:00,10:00
+14181,Chevrolet Onix Plus,Rentcars (Mobile),0,Unidas,Vehicle,Econômico,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),276.28,1,SSA,,1,10:00,10:00
+26168,Hyundai HB20,Rentcars (Mobile),0,Unidas,Vehicle,Compacto,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),291.86,1,SSA,,1,10:00,10:00
+4717,Volkswagen T-Cross,Rentcars (Mobile),0,Unidas,Vehicle,SUV,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),342.84,1,SSA,,1,10:00,10:00
+26170,Volkswagen Nivus,Rentcars (Mobile),0,Unidas,Vehicle,SUV,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),315.31,1,SSA,,1,10:00,10:00
+5146,Fiat Cronos,Rentcars (Mobile),0,Unidas,Vehicle,Intermediário,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),304.65,1,SSA,,1,10:00,10:00
+167,Toyota Corolla,Rentcars (Mobile),0,Unidas,Vehicle,Premium,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),417.11,1,SSA,,1,10:00,10:00
+6786,Volkswagen Polo,Rentcars (Mobile),0,Movida,Vehicle,Econômico,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),161.73,1,SSA,,1,10:00,10:00
+11280,Fiat Mobi,Rentcars (Mobile),0,Movida,Vehicle,Econômico,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),156.2,1,SSA,,1,10:00,10:00
+13763,Hyundai HB20,Rentcars (Mobile),0,Movida,Vehicle,Compacto,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),224.38,1,SSA,,1,10:00,10:00
+36,Fiat Pulse,Rentcars (Mobile),0,Movida,Vehicle,SUV,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),243.87,1,SSA,,1,10:00,10:00
+16696,Jeep Compass,Rentcars (Mobile),0,Movida,Vehicle,SUV,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),347.67,1,SSA,,1,10:00,10:00
+30585,Jeep Renegade,Rentcars (Mobile),0,Movida,Vehicle,SUV,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),260.47,1,SSA,,1,10:00,10:00
+569,Fiat Cronos,Rentcars (Mobile),0,Movida,Vehicle,Intermediário,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),223.87,1,SSA,,1,10:00,10:00
+5120,Volkswagen Virtus,Rentcars (Mobile),0,Movida,Vehicle,Intermediário,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),230.92,1,SSA,,1,10:00,10:00
+14048,Hyundai HB20S,Rentcars (Mobile),0,Movida,Vehicle,Intermediário,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),180.12,1,SSA,,1,10:00,10:00
+313,Fiat Strada,Rentcars (Mobile),0,Movida,Vehicle,Utilitário,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),199.8,1,SSA,,1,10:00,10:00
+4878,Fiat Fiorino,Rentcars (Mobile),0,Movida,Vehicle,Cargo,Brasil,Domestic,BRAZIL,52,Aeroporto de Salvador ( Deputado Luís Eduardo Magalhães),203.36,1,SSA,,1,10:00,10:00

@@ -1,0 +1,6 @@
+rentcars_cidades:
+  GRU: "54"    # Guarulhos
+  CGH: "9"     # Congonhas
+  SSA: "52"  # Salvador
+  VIX: "226"  # Vitória, por exemplo
+  REC: "178"  # Recife

@@ -1,6 +1,7 @@
 import asyncio
 import logging
 import read_url
+import pandas as pd
 
 from playwright_handler import capturar_payload
 from parser import parse_batch
@@ -8,7 +9,7 @@ from producer import publicar_dados_producer
 
 #level=logging.WARNING
 #level=logging.DEBUG
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Lê a URL do arquivo de configuração YAML usando o módulo read_url
 URL = read_url.ler_url()
@@ -36,13 +37,30 @@ async def main():
 
     print(f"Capturados {len(payloads)} batches.")
 
+    todos_carros = []  # Lista para armazenar todos os resultados
+
     # Parse e exibição dos dados
     for batch in payloads:
         carros = parse_batch(batch)
         for carro in carros:
-            publicar_dados_producer(carro)
+            #publicar carro no producer RabbitMQ
+            #publicar_dados_producer(carro)
+
+            #isolar para visualizar os dados no terminal
+            print(carro)
 
             logging.debug(f"Carros capturados: {carro}")
+            todos_carros.append(carro)
+
+    # Salva tudo em um único CSV
+    if todos_carros:
+        df = pd.DataFrame(todos_carros)
+        caminho_arquivo = "resultados_rentcars.csv"
+        df.to_csv(caminho_arquivo, index=False, encoding="utf-8-sig")
+        print(f"[INFO] CSV salvo com sucesso em: {caminho_arquivo}")
+    else:
+        print("[WARN] Nenhum carro foi extraído para salvar.")
+
 
 
 if __name__ == "__main__":

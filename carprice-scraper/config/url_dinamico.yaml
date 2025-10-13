@@ -1,0 +1,11 @@
+rentcars:
+  cidades_retirada:
+    - SSA
+  cidades_devolucao:
+    - ""    # devolução no mesmo local (GRU)
+  faixas_diarias:
+    - [1, 1]
+  data_inicio: "2025-10-13"
+  hora_retirada: ["10:00"]
+  hora_devolucao: ["10:00"]
+  browser: "chromium"

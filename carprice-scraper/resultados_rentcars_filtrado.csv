@@ -1,0 +1,33 @@
+﻿id,nome,afiliado,lp,locadora,categoria,subcategoria,pais,tipo,mercado,local_id,local_nome,preco,quantidade
+19254,Fiat Mobi,Rentcars (Mobile),0,Localiza,Vehicle,Econômico,Brasil,Domestic,BRAZIL,54,Aeroporto de Guarulhos ( Cumbica – Guarulhos),198.06,1
+31746,Fiat Argo,Rentcars (Mobile),0,Localiza,Vehicle,Econômico,Brasil,Domestic,BRAZIL,54,Aeroporto de Guarulhos ( Cumbica – Guarulhos),208.45,1
+555,Volkswagen Polo,Rentcars (Mobile),0,Localiza,Vehicle,Compacto,Brasil,Domestic,BRAZIL,54,Aeroporto de Guarulhos ( Cumbica – Guarulhos),252.13,1
+43641,Chevrolet Onix,Rentcars (Mobile),0,Localiza,Vehicle,Compacto,Brasil,Domestic,BRAZIL,54,Aeroporto de Guarulhos ( Cumbica – Guarulhos),260.02,1
+5197,Chevrolet Spin,Rentcars (Mobile),0,Localiza,Vehicle,Minivan,Brasil,Domestic,BRAZIL,54,Aeroporto de Guarulhos ( Cumbica – Guarulhos),726.35,1
+5196,Jeep Renegade,Rentcars (Mobile),0,Localiza,Vehicle,SUV,Brasil,Domestic,BRAZIL,54,Aeroporto de Guarulhos ( Cumbica – Guarulhos),425.5,1
+15275,Chevrolet Equinox,Rentcars (Mobile),0,Localiza,Vehicle,SUV,Brasil,Domestic,BRAZIL,54,Aeroporto de Guarulhos ( Cumbica – Guarulhos),910.27,1
+16321,Jeep Compass,Rentcars (Mobile),0,Localiza,Vehicle,SUV,Brasil,Domestic,BRAZIL,54,Aeroporto de Guarulhos ( Cumbica – Guarulhos),876.56,1
+26726,Volkswagen Tera,Rentcars (Mobile),0,Localiza,Vehicle,SUV,Brasil,Domestic,BRAZIL,54,Aeroporto de Guarulhos ( Cumbica – Guarulhos),414.46,1
+31196,Jeep Commander,Rentcars (Mobile),0,Localiza,Vehicle,SUV,Brasil,Domestic,BRAZIL,54,Aeroporto de Guarulhos ( Cumbica – Guarulhos),2209.41,1
+64394,Nissan Kicks,Rentcars (Mobile),0,Localiza,Vehicle,SUV,Brasil,Domestic,BRAZIL,54,Aeroporto de Guarulhos ( Cumbica – Guarulhos),543.45,1
+8353,Hyundai HB20S,Rentcars (Mobile),0,Localiza,Vehicle,Intermediário,Brasil,Domestic,BRAZIL,54,Aeroporto de Guarulhos ( Cumbica – Guarulhos),297.14,1
+15543,Hyundai HB20S,Rentcars (Mobile),0,Localiza,Vehicle,Intermediário,Brasil,Domestic,BRAZIL,54,Aeroporto de Guarulhos ( Cumbica – Guarulhos),236.84,1
+19239,Fiat Cronos,Rentcars (Mobile),0,Localiza,Vehicle,Intermediário,Brasil,Domestic,BRAZIL,54,Aeroporto de Guarulhos ( Cumbica – Guarulhos),272.73,1
+562,Volkswagen Saveiro,Rentcars (Mobile),0,Localiza,Vehicle,Utilitário,Brasil,Domestic,BRAZIL,54,Aeroporto de Guarulhos ( Cumbica – Guarulhos),379.55,1
+37187,Fiat Strada,Rentcars (Mobile),0,Localiza,Vehicle,Utilitário,Brasil,Domestic,BRAZIL,54,Aeroporto de Guarulhos ( Cumbica – Guarulhos),462.39,1
+7609,Audi A3 Sedan,Rentcars (Mobile),0,Localiza,Vehicle,Premium,Brasil,Domestic,BRAZIL,54,Aeroporto de Guarulhos ( Cumbica – Guarulhos),1217.44,1
+12187,Honda Civic,Rentcars (Mobile),0,Localiza,Vehicle,Premium,Brasil,Domestic,BRAZIL,54,Aeroporto de Guarulhos ( Cumbica – Guarulhos),865.74,1
+565,Chevrolet S10,Rentcars (Mobile),0,Localiza,Vehicle,Especial,Brasil,Domestic,BRAZIL,54,Aeroporto de Guarulhos ( Cumbica – Guarulhos),2614.06,1
+11325,Fiat Toro,Rentcars (Mobile),0,Localiza,Vehicle,Especial,Brasil,Domestic,BRAZIL,54,Aeroporto de Guarulhos ( Cumbica – Guarulhos),922.53,1
+561,Fiat Fiorino,Rentcars (Mobile),0,Localiza,Vehicle,Cargo,Brasil,Domestic,BRAZIL,54,Aeroporto de Guarulhos ( Cumbica – Guarulhos),471.39,1
+6786,Volkswagen Polo,Rentcars (Mobile),0,Movida,Vehicle,Econômico,Brasil,Domestic,BRAZIL,54,Aeroporto de Guarulhos ( Cumbica – Guarulhos),162.23,1
+11280,Fiat Mobi,Rentcars (Mobile),0,Movida,Vehicle,Econômico,Brasil,Domestic,BRAZIL,54,Aeroporto de Guarulhos ( Cumbica – Guarulhos),156.63,1
+38,Chevrolet Spin,Rentcars (Mobile),0,Movida,Vehicle,Minivan,Brasil,Domestic,BRAZIL,54,Aeroporto de Guarulhos ( Cumbica – Guarulhos),645.12,1
+36,Fiat Pulse,Rentcars (Mobile),0,Movida,Vehicle,SUV,Brasil,Domestic,BRAZIL,54,Aeroporto de Guarulhos ( Cumbica – Guarulhos),274.32,1
+16696,Jeep Compass,Rentcars (Mobile),0,Movida,Vehicle,SUV,Brasil,Domestic,BRAZIL,54,Aeroporto de Guarulhos ( Cumbica – Guarulhos),392.48,1
+18763,Chery Tiggo 8,Rentcars (Mobile),0,Movida,Vehicle,SUV,Brasil,Domestic,BRAZIL,54,Aeroporto de Guarulhos ( Cumbica – Guarulhos),524.17,1
+30585,Jeep Renegade,Rentcars (Mobile),0,Movida,Vehicle,SUV,Brasil,Domestic,BRAZIL,54,Aeroporto de Guarulhos ( Cumbica – Guarulhos),301.41,1
+14048,Hyundai HB20S,Rentcars (Mobile),0,Movida,Vehicle,Intermediário,Brasil,Domestic,BRAZIL,54,Aeroporto de Guarulhos ( Cumbica – Guarulhos),179.35,1
+313,Fiat Strada,Rentcars (Mobile),0,Movida,Vehicle,Utilitário,Brasil,Domestic,BRAZIL,54,Aeroporto de Guarulhos ( Cumbica – Guarulhos),301.74,1
+12987,Toyota Corolla,Rentcars (Mobile),0,Movida,Vehicle,Premium,Brasil,Domestic,BRAZIL,54,Aeroporto de Guarulhos ( Cumbica – Guarulhos),362.8,1
+14417,Nissan Frontier 4x4,Rentcars (Mobile),0,Movida,Vehicle,Especial,Brasil,Domestic,BRAZIL,54,Aeroporto de Guarulhos ( Cumbica – Guarulhos),741.03,1
